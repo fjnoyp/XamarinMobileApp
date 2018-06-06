@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cards.Core.Views.HorizontalListView">
+  <ContentView.Content>
+        <AbsoluteLayout x:Name="absoluteLayout" Padding="0" HorizontalOptions="FillAndExpand" >
+
+            <ListView x:Name="rotatedListView"  SeparatorVisibility="None"/>
+
+        </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

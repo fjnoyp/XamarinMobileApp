@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cards.Core.Views.NoteView">
+    <ContentView.Content>
+
+
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+
+            <Button x:Name="doneButton" Text="Done" HorizontalOptions="Center" IsEnabled="False" Clicked="doneButton_Clicked"/>
+
+
+            <Entry x:Name="titleEntry" Completed="titleEntry_Completed"
+                   Unfocused="entry_Unfocused"  Focused="entry_Focused"></Entry>
+            
+            <Editor x:Name="bodyEditor"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                    Unfocused="entry_Unfocused"  Focused="entry_Focused"></Editor>
+
+
+        </StackLayout>
+
+
+    </ContentView.Content>
+</ContentView>

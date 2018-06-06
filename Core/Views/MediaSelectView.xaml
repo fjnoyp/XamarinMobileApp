@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.MediaSelectView">
+    <ContentView.Content>
+        <Frame x:Name="parentFrame" Padding="1,1,1,1" BackgroundColor="AliceBlue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid ColumnSpacing="5" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <forms:CachedImage x:Name="closeImage" Source="BackIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="0" >
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="close_Tapped" NumberOfTapsRequired="1"/>
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+
+                <Label x:Name="numSelectedLabel" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" />
+
+                <forms:CachedImage x:Name="shareImage" Source="ShareIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="2" >
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="share_Tapped" NumberOfTapsRequired="1"/>
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+
+                <forms:CachedImage x:Name="addImage" Source="PlusIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="3" >
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="add_Tapped" NumberOfTapsRequired="1"/>
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+
+                <forms:CachedImage x:Name="deleteImage" Source="DeleteIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="4" >
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="delete_Tapped" NumberOfTapsRequired="1"/>
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+
+            </Grid>
+
+
+        </Frame>
+    </ContentView.Content>
+</ContentView>

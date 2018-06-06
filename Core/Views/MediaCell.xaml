@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.MediaCell"
+          >
+    <!--Padding="20,0,0,0" -->
+    <ViewCell.View>
+        <StackLayout Rotation="90" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+
+            <Label x:Name="TextProperty" Text="{Binding text}" />
+
+            <forms:CachedImage x:Name="ImageProperty" Margin="10" Aspect="AspectFill"
+            DownsampleToViewSize="true" Source="{Binding image}}" LoadingPlaceholder="Icon.png" />
+
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

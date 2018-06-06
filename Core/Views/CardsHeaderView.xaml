@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.CardsHeaderView">
+    <ContentView.Content>
+
+        <!-- for placing searchbar overlay -->
+        <AbsoluteLayout x:Name="parentLayout">
+
+            <!--  sort_Clicked   -->
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="5,5,5,5" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <RelativeLayout x:Name="alphaSortFrame" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" >
+
+                        <forms:CachedImage x:Name="alphabetSortImage" Source="AlphabeticalIcon.png" 
+                                           Aspect="AspectFit" DownsampleToViewSize="True" />
+
+                        <forms:CachedImage x:Name="alphaSortDirImage" Source="SortArrowIcon.png" 
+                                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                ElementName=alphabetSortImage,Property=Width,Factor=.4}"
+                                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                ElementName=alphabetSortImage,Property=Height,Factor=.4}"
+                                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                ElementName=alphabetSortImage,Property=X,Factor=.4}"
+                                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                ElementName=alphabetSortImage,Property=Y,Factor=.4}"
+                                           Aspect="AspectFit" DownsampleToViewSize="True"
+                                           Rotation="90"/>
+
+                        <RelativeLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="alphabetSort_Clicked" NumberOfTapsRequired="1"/>
+                        </RelativeLayout.GestureRecognizers>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout x:Name="modTimeFrame" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="0" >
+
+                        <forms:CachedImage x:Name="modTimeSortImage" Source="ClockIcon.png" 
+                                           Aspect="AspectFit" DownsampleToViewSize="True" />
+
+                        <forms:CachedImage x:Name="modTimeDirImage" Source="SortArrowIcon.png" 
+                                           RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                ElementName=modTimeSortImage,Property=Width,Factor=.4}"
+                                           RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                ElementName=modTimeSortImage,Property=Height,Factor=.4}"
+                                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, 
+                                                ElementName=modTimeSortImage,Property=X,Factor=.4}"
+                                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                ElementName=modTimeSortImage,Property=Y,Factor=.4}"
+                                           Aspect="AspectFit" DownsampleToViewSize="True"
+                                           Rotation="90"/>
+
+                        <RelativeLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="timeSort_Clicked" NumberOfTapsRequired="1"/>
+                        </RelativeLayout.GestureRecognizers>
+                    </RelativeLayout>
+
+                    <RelativeLayout Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="0" >
+                        <forms:CachedImage x:Name="showFavoritesImage" Source="NonFavoriteIcon.png" 
+                                           Aspect="AspectFit" DownsampleToViewSize="True" >
+
+                            <forms:CachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="showOnlyFavorites_Clicked" NumberOfTapsRequired="1"/>
+                            </forms:CachedImage.GestureRecognizers>
+
+                        </forms:CachedImage>
+                    </RelativeLayout>
+
+                </Grid>
+
+                <forms:CachedImage x:Name="searchIcon" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" Source="SearchIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" >
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="search_Tapped" NumberOfTapsRequired="1" />
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+
+            </Grid>
+
+            <Frame  x:Name="searchBar" Padding="1,1,1,1" BackgroundColor="White" OutlineColor="Orange" IsVisible="False" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <SearchBar Grid.Column="0" HorizontalOptions="Start" Placeholder="Search" TextChanged="searchBar_OnTextChanged"/>
+
+                    <forms:CachedImage Grid.Column="1" Source="BackArrowIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" HorizontalOptions="End">
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="searchBack_Tapped" NumberOfTapsRequired="1" />
+                        </forms:CachedImage.GestureRecognizers>
+
+                    </forms:CachedImage>
+                </Grid>
+            </Frame>
+
+        </AbsoluteLayout>
+
+    </ContentView.Content>
+</ContentView>

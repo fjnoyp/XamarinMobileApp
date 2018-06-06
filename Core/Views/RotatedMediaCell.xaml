@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.Core.Views.RotatedMediaCell" 
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             >
+    <ViewCell.View>
+        <local:CardMediaCell Rotation="90"/>
+    </ViewCell.View>
+</ViewCell>

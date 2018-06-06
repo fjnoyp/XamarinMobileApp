@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.SearchCardItemsView">
+  <ContentView.Content>
+        <forms:CachedImage Source="SearchIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="Center">
+            
+        </forms:CachedImage>
+  </ContentView.Content>
+</ContentView>

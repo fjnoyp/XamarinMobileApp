@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.ContactView">
+    <ContentView.Content>
+
+        <ScrollView Orientation="Vertical" BackgroundColor="White">
+
+            
+            
+            <RelativeLayout x:Name="parentLayout">
+
+                <StackLayout>
+
+                    <Grid x:Name="topStackLayout"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                Property=Height,Factor=0}"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                Property=Width,Factor=1,Constant=0}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                Property=Height,Factor=.1,Constant=0}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    
+
+                    <Button x:Name="doneButton" Grid.Column="1" Text="Done" IsEnabled="False" Clicked="doneButton_Clicked"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+
+                    <forms:CachedImage Aspect="AspectFit" Grid.Column="2" Margin="3,3,3,3"
+                                       HorizontalOptions="End" VerticalOptions="FillAndExpand"
+                                       DownsampleToViewSize="true" 
+                                       Source="ContactIcon.png"/>
+
+                </Grid>
+
+                    <Frame x:Name="contactImageFrame" Padding="0,5,0,0" 
+                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                           BackgroundColor="AntiqueWhite">
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                            <forms:CachedImage x:Name="contactImage" Aspect="AspectFill"
+                                       LoadingPlaceholder="ContactIcon.png" Source="ContactIcon.png"
+                                       WidthRequest="100" HeightRequest="100" DownsampleToViewSize="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                                       
+                                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView,
+                                            ElementName=parentLayout, Property=Y, Factor=.3}"
+                                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                            ElementName=parentLayout, Property=Y, Factor=.3}" >
+                                <forms:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="contactImage_Tapped"/>
+                                </forms:CachedImage.GestureRecognizers>
+                            </forms:CachedImage>
+
+                            <StackLayout x:Name="contactImageControlLayout" Orientation="Horizontal"
+                                 BackgroundColor="AliceBlue" WidthRequest="100" HeightRequest="40"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                    ElementName=contactImage, Property=Y, Factor=1}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView,
+                                    ElementName=parentLayout, Property=Y, Factor=.1}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView,
+                                    ElementName=parentLayout, Property=Y, Factor=.1}" >
+
+                                <forms:CachedImage Aspect="AspectFit"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       DownsampleToViewSize="true" 
+                                       Source="GalleryIcon.png">
+                                    <forms:CachedImage.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="gallery_Tapped"/>
+                                    </forms:CachedImage.GestureRecognizers>
+                                </forms:CachedImage>
+
+                                <forms:CachedImage Aspect="AspectFit"
+                                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                       DownsampleToViewSize="true" 
+                                       Source="CameraIcon.png">
+                                    <forms:CachedImage.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="camera_Tapped"/>
+                                    </forms:CachedImage.GestureRecognizers>
+                                </forms:CachedImage>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <StackLayout
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToView,
+                                ElementName=parentLayout, Property=Width, Factor=1, Constant=0}" >
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="2,2,2,2">
+                            <Label Text="n:" HorizontalOptions="Start"/>
+                            <Entry x:Name="nameEntry" HorizontalOptions="FillAndExpand"
+                                   Unfocused="entry_Unfocused"  Focused="entry_Focused" ></Entry>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="2,2,2,2">
+                            <Label Text="p:" HorizontalOptions="Start"/>
+                            <Entry x:Name="phoneEntry" HorizontalOptions="FillAndExpand" 
+                                   Unfocused="entry_Unfocused"  Focused="entry_Focused" ></Entry>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </RelativeLayout>
+
+            
+
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

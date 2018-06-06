@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.MediaControlView">
+    
+    <ContentView.Content>
+        <Frame x:Name="parentFrame" Padding="1,1,1,1" BackgroundColor="AliceBlue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+
+            <Grid ColumnSpacing="10" Padding="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <forms:CachedImage x:Name="cameraImage" Source="CameraIcon" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="0" >
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="camera_Tapped" NumberOfTapsRequired="1"/>
+                        </forms:CachedImage.GestureRecognizers>
+                    </forms:CachedImage>
+
+                    <forms:CachedImage x:Name="videoImage" Source="VideoCameraIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="1" >
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="video_Tapped" NumberOfTapsRequired="1"/>
+                        </forms:CachedImage.GestureRecognizers>
+                    </forms:CachedImage>
+
+                    <forms:CachedImage x:Name="audioImage" Source="MicIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="2" >
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="audio_Tapped" NumberOfTapsRequired="1"/>
+                        </forms:CachedImage.GestureRecognizers>
+                    </forms:CachedImage>
+
+                    <forms:CachedImage x:Name="noteImage" Source="NoteIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="3" >
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="note_Tapped" NumberOfTapsRequired="1"/>
+                        </forms:CachedImage.GestureRecognizers>
+                    </forms:CachedImage>
+
+                    <forms:CachedImage Source="ContactCircleIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" Grid.Column="4" >
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="contact_Tapped" NumberOfTapsRequired="1"/>
+                        </forms:CachedImage.GestureRecognizers>
+                    </forms:CachedImage>
+
+            </Grid>
+
+
+        </Frame>
+    </ContentView.Content>
+</ContentView>

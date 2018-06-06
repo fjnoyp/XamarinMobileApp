@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+            x:Class="Cards.Core.Views.MediaCaptureView">
+    <ContentView.Content>
+
+        <StackLayout Orientation="Horizontal" HeightRequest="60" >
+
+            <forms:CachedImage x:Name="takePictureButton" Margin="10" HeightRequest="40" WidthRequest="40" 
+            DownsampleToViewSize="true" Source="CameraIcon.png" >
+                 <forms:CachedImage.GestureRecognizers>
+                <TapGestureRecognizer
+                Tapped="takePictureButton_Clicked"
+                NumberOfTapsRequired="1" />
+                </forms:CachedImage.GestureRecognizers>
+            </forms:CachedImage>
+
+            <forms:CachedImage x:Name="takeVideoButton" Margin="10" HeightRequest="40" WidthRequest="40" 
+            DownsampleToViewSize="true" Source="VideoCameraIcon.png" >
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="takeVideoButton_Clicked"
+                NumberOfTapsRequired="1" />
+                </forms:CachedImage.GestureRecognizers>
+            </forms:CachedImage>
+
+            <forms:CachedImage x:Name="takeAudioButton" Margin="10" HeightRequest="40" WidthRequest="40" 
+            DownsampleToViewSize="true" Source="MicIcon.png" >
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="takeAudioButton_Clicked"
+                NumberOfTapsRequired="1" />
+                </forms:CachedImage.GestureRecognizers>
+            </forms:CachedImage>
+
+            <forms:CachedImage x:Name="takeNoteButton" Margin="10" HeightRequest="40" WidthRequest="40" 
+            DownsampleToViewSize="true" Source="LaptopIcon.png" >
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="takeNoteButton_Clicked"
+                NumberOfTapsRequired="1" />
+                </forms:CachedImage.GestureRecognizers>
+            </forms:CachedImage>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

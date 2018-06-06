@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Plugin.MediaManager.Forms;assembly=Plugin.MediaManager.Forms"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+
+             x:Class="Cards.Core.Views.VideoMediaView">
+    <ContentView.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+
+           
+
+
+            <StackLayout x:Name="videoViewStack" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" Grid.Row="0" BackgroundColor="Black">
+
+                <ffimage:CachedImage x:Name="playImage" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" DownsampleToViewSize="True"
+                               Source="PlayIcon.png">
+
+                    <ffimage:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="play_Clicked" NumberOfTapsRequired="1" />
+                    </ffimage:CachedImage.GestureRecognizers>
+
+                </ffimage:CachedImage>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="video_Tapped" />
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="1">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <ProgressBar x:Name="ProgressBar" Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></ProgressBar>
+
+                    <ffimage:CachedImage x:Name="videoControlImage" Grid.Row="0" Source="VideoPlayIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" HorizontalOptions="Center" VerticalOptions="End">
+                        <ffimage:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="videoControl_Tapped"/>
+                        </ffimage:CachedImage.GestureRecognizers>
+                    </ffimage:CachedImage>
+
+              
+                </Grid>
+                
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

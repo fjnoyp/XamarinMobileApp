@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cards.Core.Views.AudioView">
+  <ContentView.Content>
+      <StackLayout Padding="20,80,20,0" Orientation="Vertical" Spacing="15" BackgroundColor="White">
+          
+            <Label x:Name="mediaNameLabel" HorizontalOptions="Center" FontSize="35" />
+            <Label x:Name="recordingDuration" HorizontalOptions="Center" FontSize="20" />
+
+            <Button x:Name="playButton" Text="Play" FontSize="24" HorizontalOptions="Center" Clicked="playButton_Clicked"/>
+            <Button x:Name="stopButton" Text="Stop" FontSize="24" HorizontalOptions="Center" Clicked="stopButton_Clicked" />
+          
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

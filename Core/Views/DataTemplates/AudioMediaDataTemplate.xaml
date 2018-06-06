@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cards.Core.Views.DataTemplates.AudioMediaDataTemplate">
+  <ContentView.Content>
+
+        <Grid Padding="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Padding="1,1,1,1" BackgroundColor="LightCoral" HeightRequest="100">
+                <Label Text="{Binding name}" />
+            </Frame>
+
+        </Grid>
+
+        
+        
+    </ContentView.Content>
+</ContentView>

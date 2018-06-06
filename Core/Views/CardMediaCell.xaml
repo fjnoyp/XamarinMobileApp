@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:gesture="clr-namespace:Cards.Core.Gestures"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.Core.Views.CardMediaCell">
+
+    <ContentView.Content>
+
+        <StackLayout WidthRequest="100" HeightRequest="100">
+        <Grid x:Name="grid" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="98" WidthRequest="98">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+        
+
+            <forms:CachedImage x:Name="image" Aspect="AspectFill" HeightRequest="98" DownsampleWidth="98" DownsampleToViewSize="True" 
+							Source="{Binding image}" LoadingPlaceholder="White.png"/>
+
+            <forms:CachedImage x:Name="videoImage" Source="VideoIcon.png" DownsampleHeight="40" VerticalOptions="End" HorizontalOptions="End" />
+
+            <Frame x:Name="countFrame" VerticalOptions="Start" HorizontalOptions="End" CornerRadius="15" WidthRequest="30" HeightRequest="30" BackgroundColor="Red" Margin="0" Padding="0">
+                <Label x:Name="countLabel" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" Text="{Binding mediaCount}" />
+            </Frame>
+
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label x:Name="nameLabel" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" LineBreakMode="TailTruncation" Text="{Binding name}"/>
+                <Label x:Name="bodyLabel" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Text="{Binding bodyText}"/>
+            </StackLayout>
+            
+            <forms:CachedImage x:Name="secondImage" DownsampleHeight="80" Source="SelectedIcon.png" IsVisible="{Binding isSelected}" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+
+
+        </Grid>
+        </StackLayout>
+
+
+        <!--        
+
+
+            <Frame  Padding="1,1,1,1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  WidthRequest="100" HeightRequest="100">
+
+                <AbsoluteLayout Margin="0,0,0,0" >
+
+
+
+                    <forms:CachedImage x:Name="image" HeightRequest="100" Aspect="AspectFill"
+							Source="{Binding image}" LoadingPlaceholder="icon.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+
+                    <forms:CachedImage x:Name="videoIconImage" Source="VideoIcon.png" AbsoluteLayout.LayoutBounds="1,1,.2,.2" AbsoluteLayout.LayoutFlags="All" />
+                </AbsoluteLayout>
+            </Frame>
+-->
+
+
+    </ContentView.Content>
+
+
+</ContentView>

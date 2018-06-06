@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cards.Core.Views.RecordAudioView">
+  <ContentView.Content>
+        <StackLayout Padding="20,20,20,0" Orientation="Vertical" Spacing="15">
+
+            <Label x:Name="recordingName" HorizontalOptions="Center" FontSize="Large" />
+            <Label x:Name="recordingDuration" HorizontalOptions="Center" FontSize="Medium" />
+
+            <StackLayout Orientation="Horizontal">
+            <Button x:Name="recordButton" Text="Record" FontSize="Medium"  HorizontalOptions="FillAndExpand" Clicked="recordButton_Clicked" />
+            <Button x:Name="stopButton" Text="Stop" FontSize="Medium" HorizontalOptions="FillAndExpand" Clicked="stopButton_Clicked" />
+            <Button x:Name="playButton" Text="Play" FontSize="Medium" HorizontalOptions="FillAndExpand" Clicked="playButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

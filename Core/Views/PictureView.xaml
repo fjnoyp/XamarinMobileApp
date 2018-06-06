@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.Core.Views.PictureView">
+    <ContentView.Content>
+
+        <local:PinchToZoomContainer IsClippedToBounds="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <local:PinchToZoomContainer.Content>
+                <forms:CachedImage x:Name="image" Aspect="AspectFill" HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="FillAndExpand" DownsampleToViewSize="true" 
+                                   LoadingPlaceholder="{Binding image}" Source="{Binding fullImage}">
+
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="picture_Tapped" NumberOfTapsRequired="1"/>
+                    </forms:CachedImage.GestureRecognizers>
+                    
+                </forms:CachedImage>
+            
+            
+            </local:PinchToZoomContainer.Content>
+        </local:PinchToZoomContainer>
+
+
+    </ContentView.Content>
+</ContentView>
+    
+    

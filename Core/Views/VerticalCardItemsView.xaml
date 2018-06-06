@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.Core.Views.VerticalCardItemsView">
+  <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Frame Padding="1,1,1,1">
+                <local:CardItemHeaderView x:Name="cardItemHeaderView" HorizontalOptions="CenterAndExpand"/>
+            </Frame>
+            <Frame Padding="1,1,1,1">
+                <local:CardItemSortView x:Name="cardItemSortView" HorizontalOptions="CenterAndExpand"/>
+            </Frame>
+
+            <ListView x:Name="cardItemListView"/>
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

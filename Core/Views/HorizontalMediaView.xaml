@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:imgcrop="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.ImageCropView"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.Core.Views.HorizontalMediaView">
+    <ContentView.Content>
+
+
+        <StackLayout x:Name="stacklayout" Orientation="Vertical" Spacing="0" >
+
+
+                <StackLayout Orientation="Horizontal" Padding="2,2,2,2" Spacing="3" BackgroundColor="AliceBlue" VerticalOptions="CenterAndExpand" HeightRequest="30">
+
+                    <local:CardItemHeaderView x:Name="headerView" VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="80" />
+                    <local:CardItemSortView x:Name="sortView" VerticalOptions="Center" HorizontalOptions="End" />
+
+                </StackLayout>
+          
+
+            <local:HorizontalListView x:Name="horizontalListView"></local:HorizontalListView>
+
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
+    
+    

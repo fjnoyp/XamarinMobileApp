@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Cards.Core.Converters"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.CardCell">
+  <ViewCell.View>
+        <Grid>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="dirLabel" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0" Text="{Binding name}" />
+            <Label x:Name="dateLabel" Grid.Column="1" VerticalOptions="Center"  Text="{Binding lastModTime}" />
+
+            <forms:CachedImage Grid.Column="2" Aspect="AspectFit" Margin="5,5,5,5" VerticalOptions="Center" HorizontalOptions="End" Source="{Binding isFavorited, Converter={converters:BoolToFavIconConverter}}" >
+
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="favoriteImage_Tapped" />
+                </forms:CachedImage.GestureRecognizers>
+
+            </forms:CachedImage>
+           
+
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+x:Class="Cards.Core.Views.DataTemplates.ImageMediaDataTemplate">
+    <ContentView.Content>
+
+        <Grid Padding="3">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <forms:CachedImage HeightRequest="100" Aspect="AspectFill" DownsampleWidth="100" DownsampleToViewSize="True" 
+							Source="{Binding image}" LoadingPlaceholder="icon.png"/>
+
+        </Grid>
+
+    </ContentView.Content>
+
+</ContentView>

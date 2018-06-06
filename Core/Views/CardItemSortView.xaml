@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Cards.Core.Converters"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.Core.Views.CardItemSortView">
+    <ContentView.Content>
+
+        <StackLayout Orientation="Horizontal" MinimumHeightRequest="30">
+
+            <forms:CachedImage x:Name="showFavoritesImage" Source="NonFavoriteIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="End" HorizontalOptions="End" >
+
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="showOnlyFavorites_Clicked" NumberOfTapsRequired="1"/>
+                </forms:CachedImage.GestureRecognizers>
+
+            </forms:CachedImage>
+
+            <Label Text="Sort by: " VerticalOptions="Center" HorizontalOptions="Start"/>
+
+            <Frame.GestureRecognizers>
+
+                <TapGestureRecognizer Tapped="sort_Clicked" NumberOfTapsRequired="1" />
+
+            </Frame.GestureRecognizers>
+
+            <Label x:Name="sortTypeLabel" HorizontalOptions="Center" VerticalOptions="Center">
+            </Label>
+
+            <forms:CachedImage x:Name="sortDirectionImage" Source="DownArrowIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="End" >
+
+                <forms:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="sortDirection_Tapped" NumberOfTapsRequired="1" />
+                </forms:CachedImage.GestureRecognizers>
+
+            </forms:CachedImage>
+
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
