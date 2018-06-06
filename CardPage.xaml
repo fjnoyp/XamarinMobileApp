@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="Cards.CardPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Share" Order="Primary" Clicked="share_Clicked" />
+        <ToolbarItem x:Name="selectToolbarItem" Text="Select" Order="Primary" Clicked="select_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Content>
+        
+
+        <AbsoluteLayout>
+
+            <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" FlowItemTapped="flowListView_FlowItemTapped"
+			FlowColumnMinWidth="100" HasUnevenRows="True" AbsoluteLayout.LayoutBounds="0,0,1,.9" AbsoluteLayout.LayoutFlags="All"  
+                              >
+
+                <flv:FlowListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="40">
+                                <Label Text="{Binding Path=Key}" FontSize="Small" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </flv:FlowListView.GroupHeaderTemplate>
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <local:CardMediaCell/>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+
+            <local:MediaControlView x:Name="mediaControlView" Padding="1,1,1,1" AbsoluteLayout.LayoutBounds="0,1,1,.1" AbsoluteLayout.LayoutFlags="All"/>
+
+            <local:MediaSelectView x:Name="mediaSelectView" IsVisible="False" Padding="1,1,1,1" AbsoluteLayout.LayoutBounds="0,1,1,.1" AbsoluteLayout.LayoutFlags="All"/>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

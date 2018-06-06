@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.MediaListPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ScrollTest"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+
+
+            <flv:FlowListView x:Name="flowListView" FlowColumnCount="4" SeparatorVisibility="None" RowHeight="100"
+				FlowUseAbsoluteLayoutInternally="false" FlowColumnExpand="None" FlowItemTapped="flowListView_ItemTapped"
+                              
+			>
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            
+                            <Label HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+						XAlign="Center" YAlign="Center" Text="{Binding text}" LineBreakMode="CharacterWrap"/>
+                            
+                            <forms:CachedImage Aspect="AspectFill" DownsampleHeight="200" DownsampleWidth="200" Source="{Binding image}}" LoadingPlaceholder="Icon.png" />
+                        </StackLayout>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

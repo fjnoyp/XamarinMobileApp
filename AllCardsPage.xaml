@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.AllCardsPage"
+             Title="All Cards" >
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,.85" AbsoluteLayout.LayoutFlags="All">
+
+                <local:CardsHeaderView x:Name="cardsHeaderView" HorizontalOptions="FillAndExpand" VerticalOptions="Center" 
+                                       BackgroundColor="AliceBlue" MinimumHeightRequest="60" />
+
+                <ListView x:Name="cardsListView" ItemTapped="cardsListView_ItemTapped" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:CardCell/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+
+            <Button Text="Create New Card" AbsoluteLayout.LayoutBounds="0,1,1,.15" AbsoluteLayout.LayoutFlags="All" 
+                    FontAttributes="Bold" FontSize="Large" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Clicked="createCard_Clicked"/>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

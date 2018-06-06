@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cards.MediaCapturePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="takePictureButton" Text="Picture" Clicked="takePicture" />
+            <Button x:Name="pickPictureButton" Text="Pick Picture" Clicked="pickPicture" />
+            <Image x:Name="image" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             xmlns:core="clr-namespace:Cards.Core"
+              xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             x:Class="Cards.NewCardPage"
+NavigationPage.HasNavigationBar="False">
+
+    <!--
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Select" Order="Primary"  Clicked="select_Clicked" />
+        <ToolbarItem Order="Primary"  />
+        <ToolbarItem Order="Primary"  />
+        <ToolbarItem Order="Primary"  />
+        <ToolbarItem Text="View Cards" Order="Primary" Clicked="cards_Clicked" />
+    </ContentPage.ToolbarItems>
+    -->
+    
+    
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <Frame Padding="3,3,3,3" AbsoluteLayout.LayoutBounds="0,0,1,.1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <Button x:Name="selectButton" Clicked="select_Clicked" Text="Select" Margin="2,2,2,2"
+                        FontSize="Medium" HorizontalOptions="StartAndExpand" 
+                        VerticalOptions="CenterAndExpand"
+                        BorderRadius="0"
+                        />
+
+                    <Button x:Name="viewCardsButton" Clicked="viewCards_Clicked" Text="View Cards" Margin="2,2,2,2"
+                        FontSize="Medium" HorizontalOptions="EndAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BorderRadius="0"/>
+
+                </StackLayout>
+            </Frame>
+
+            <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" FlowItemTapped="flowListView_FlowItemTapped"
+			FlowColumnMinWidth="100" HasUnevenRows="True" IsGroupingEnabled="True" AbsoluteLayout.LayoutBounds="0,.5,1,.8" AbsoluteLayout.LayoutFlags="All"  
+                              >
+
+                <flv:FlowListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="40">
+                                <Label Text="{Binding Path=Key}" FontSize="Small" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </flv:FlowListView.GroupHeaderTemplate>
+
+                <flv:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <local:CardMediaCell/>
+                    </DataTemplate>
+                </flv:FlowListView.FlowColumnTemplate>
+
+            </flv:FlowListView>
+
+
+            <Grid AbsoluteLayout.LayoutBounds="0,1,1,.10" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" BackgroundColor="AliceBlue" Padding="2,2,2,2">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <forms:CachedImage Source="CalendarIcon" Grid.Column="0" Aspect="AspectFit" DownsampleToViewSize="True" Margin="1,1,5,1" >
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="date_Clicked" NumberOfTapsRequired="1"/>
+                    </forms:CachedImage.GestureRecognizers>
+                </forms:CachedImage>
+
+                <local:MediaControlView x:Name="mediaControlView" Grid.Column="2" Margin="1,1,1,1" HorizontalOptions="FillAndExpand"/>
+
+            </Grid>
+
+            <local:MediaSelectView x:Name="mediaSelectView" IsVisible="False" Padding="2,2,2,2" AbsoluteLayout.LayoutBounds="0,1,1,.1" 
+                                   AbsoluteLayout.LayoutFlags="All"/>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

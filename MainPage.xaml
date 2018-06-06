@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Cards.MainPage">
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+
+            <forms:CachedImage Source="BackgroundGradient.png" Aspect="AspectFill" DownsampleToViewSize="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+
+            <StackLayout VerticalOptions="Center" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Spacing="50">
+
+                <forms:CachedImage Source="CardsTitleTemp.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="40" WidthRequest="80" >
+
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OpenAllCards" NumberOfTapsRequired="1" />
+                    </forms:CachedImage.GestureRecognizers>
+
+                </forms:CachedImage>
+
+
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Spacing="30">
+
+                    <forms:CachedImage Source="ContactIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="40" WidthRequest="40">
+
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenPeople" NumberOfTapsRequired="1" />
+                        </forms:CachedImage.GestureRecognizers>
+
+                    </forms:CachedImage>
+
+
+
+                    <forms:CachedImage Source="EventIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="40" WidthRequest="40">
+
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenEvents" NumberOfTapsRequired="1" />
+                        </forms:CachedImage.GestureRecognizers>
+
+                    </forms:CachedImage>
+
+                    <forms:CachedImage Source="PrivateIcon.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="40" WidthRequest="40">
+
+                        <forms:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OpenPrivate" NumberOfTapsRequired="1" />
+                        </forms:CachedImage.GestureRecognizers>
+
+                    </forms:CachedImage>
+
+                </StackLayout>
+
+                <forms:CachedImage Source="PlusIconTemp.png" Aspect="AspectFit" DownsampleToViewSize="True" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="45" WidthRequest="45">
+
+                    <forms:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="CreateCard" NumberOfTapsRequired="1" />
+                    </forms:CachedImage.GestureRecognizers>
+
+                </forms:CachedImage>
+
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

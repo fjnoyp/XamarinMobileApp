@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>c43db01b-3b98-47f4-9a10-1e50831a6426</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Cards</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AllCardsPage.xaml.cs">
+      <DependentUpon>AllCardsPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CardMediaCarouselPage.xaml.cs">
+      <DependentUpon>CardMediaCarouselPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CardPage.xaml.cs">
+      <DependentUpon>CardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\AbMediaContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DayMediaViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FileReaders\Card.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FileReaders\FavoriteManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FileReaders\ShareCard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Gestures\GestureEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Gestures\PressedGestureRecognizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Gestures\ReleasedGestureRecognizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CardMediaViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Converters\BoolToFavIconConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Converters\LongToDateConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CardItemSorter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FileReaders\FileManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IDisappearedListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IMediaBoxParent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IMediaCapturer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ObservableCollection\LinkedMediaObservableCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\FilePaths.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ICardProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ISortableCardItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\JSONSerialManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\LinkManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MediaCaptureUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MediaCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ObservableCollection\CardItemObservableCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\FileReaders\MediaManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ObservableCollectionGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\ImageResizeHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\Manager\AudioPlayerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\Manager\MediaImportManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\Manager\MediaShareManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\Manager\RecordAudioManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\Manager\UserGalleryLoadManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Platform\VideoThumbnailHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ObservableCollection\DayMediaObservableCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Temp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Utilities\AcrDialogUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Utilities\FileUtilities.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\ContactView.xaml.cs">
+      <DependentUpon>ContactView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaLinkCaptureView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaSelectView.xaml.cs">
+      <DependentUpon>MediaSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\AudioView.xaml.cs">
+      <DependentUpon>AudioView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\CardCell.xaml.cs">
+      <DependentUpon>CardCell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\CardsHeaderView.xaml.cs">
+      <DependentUpon>CardsHeaderView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\CardMediaCell.xaml.cs">
+      <DependentUpon>CardMediaCell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\AudioMediaDataTemplate.xaml.cs">
+      <DependentUpon>AudioMediaDataTemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\ImageMediaDataTemplate.xaml.cs">
+      <DependentUpon>ImageMediaDataTemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\NoteMediaDataTemplate.xaml.cs">
+      <DependentUpon>NoteMediaDataTemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\VideoMediaDataTemplate.xaml.cs">
+      <DependentUpon>VideoMediaDataTemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\FixedLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\HorizontalListView.xaml.cs">
+      <DependentUpon>HorizontalListView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaCaptureView.xaml.cs">
+      <DependentUpon>MediaCaptureView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaCell.xaml.cs">
+      <DependentUpon>MediaCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaControlView.xaml.cs">
+      <DependentUpon>MediaControlView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaDisplayView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\MediaPreviewView.xaml.cs">
+      <DependentUpon>MediaPreviewView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\NoteView.xaml.cs">
+      <DependentUpon>NoteView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\PictureView.xaml.cs">
+      <DependentUpon>PictureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\PinchToZoomContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\RecordAudioView.xaml.cs">
+      <DependentUpon>RecordAudioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\RotatedCardMediaCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\RotatedMediaCell.xaml.cs">
+      <DependentUpon>RotatedMediaCell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Views\VideoMediaView.xaml.cs">
+      <DependentUpon>VideoMediaView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LinkedMediaListPage.xaml.cs">
+      <DependentUpon>LinkedMediaListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MediaCapturePage.xaml.cs">
+      <DependentUpon>MediaCapturePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MediaListPage.xaml.cs">
+      <DependentUpon>MediaListPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MediaSelectPage.xaml.cs">
+      <DependentUpon>MediaSelectPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)NewCardPage.xaml.cs">
+      <DependentUpon>NewCardPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RecordAudioPage.xaml.cs">
+      <DependentUpon>RecordAudioPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SimpleGalleryPage.xaml.cs">
+      <DependentUpon>SimpleGalleryPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Song.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TakePicturePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TempPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestNestedListView.xaml.cs">
+      <DependentUpon>TestNestedListView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)TestPropertiesPage.xaml.cs">
+      <DependentUpon>TestPropertiesPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\ContactView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\MediaSelectView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MediaCapturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\MediaCaptureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AllCardsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LinkedMediaListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\VideoMediaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\NoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MediaSelectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)RecordAudioPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\AudioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MediaListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestNestedListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestPropertiesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\MediaPreviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\MediaCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\CardCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\CardsHeaderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\HorizontalListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\RotatedMediaCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\MediaControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NewCardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CardMediaCarouselPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\ImageMediaDataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\VideoMediaDataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\AudioMediaDataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\DataTemplates\NoteMediaDataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\CardMediaCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SimpleGalleryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)songs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\RecordAudioView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Core\Views\PictureView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

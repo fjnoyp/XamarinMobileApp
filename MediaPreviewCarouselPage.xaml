@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:Cards.Core.Views"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="Cards.MediaPreviewCarouselPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="isFavoriteBarItem" Icon="NonFavoriteIcon.png" Order="Primary" Clicked="isFavoriteBarItem_Clicked"/>
+        
+        <ToolbarItem Text="Add Link" Order="Secondary" Clicked="addLink_Clicked" />
+        <ToolbarItem Text="Delete Media" Order="Secondary" Clicked="delete_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Orange">
+
+        <controls:CarouselViewControl x:Name="carouselView" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
+            Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+            <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        
+                            <local:MediaPreviewView VerticalOptions="FillAndExpand" BindingContext="{Binding bindingObject}" BackgroundColor="Chocolate"/>
+                        
+            </DataTemplate>
+            </controls:CarouselViewControl.ItemTemplate>
+        </controls:CarouselViewControl>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

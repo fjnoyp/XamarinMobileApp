@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Cards.Core.Views"
+             x:Class="Cards.AlbumsPage"
+             Title="Albums and Cards">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="isFavoriteBarItem" Icon="NonFavoriteIcon.png" Order="Primary" Clicked="isFavoriteBarItem_Clicked"/>
+        
+        <ToolbarItem Icon="DropdownIcon.png" Order="Primary" Clicked="toggleAlbums_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+            <StackLayout x:Name="cardsView" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" VerticalOptions="CenterAndExpand">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="allCardsView_Tapped" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+                <local:VerticalCardItemsView x:Name="allCardsView" />
+
+            </StackLayout>
+
+
+            <Frame Padding="3,3,3,3" x:Name="albumsView" IsVisible="False" AbsoluteLayout.LayoutBounds="1,0,.6,.7" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" >
+
+                <local:VerticalCardItemsView x:Name="allAlbumsView" />
+
+            </Frame>
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

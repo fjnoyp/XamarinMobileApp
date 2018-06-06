@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
+               xmlns:local="clr-namespace:Cards.Core.Views"
+              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" 
+             x:Class="Cards.LinkedMediaListPage">
+    <ContentPage.Content>
+
+        <flv:FlowListView x:Name="flowListView" SeparatorVisibility="None" FlowItemTapped="flowListView_FlowItemTapped"
+			FlowColumnMinWidth="100" HasUnevenRows="True" IsGroupingEnabled="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+        >
+
+            <flv:FlowListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HeightRequest="40">
+                            <Label Text="{Binding Path=Key}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </flv:FlowListView.GroupHeaderTemplate>
+
+            <flv:FlowListView.FlowColumnTemplate>
+                <DataTemplate>
+                    <local:CardMediaCell/>
+                </DataTemplate>
+            </flv:FlowListView.FlowColumnTemplate>
+
+        </flv:FlowListView>
+
+    </ContentPage.Content>
+</ContentPage>

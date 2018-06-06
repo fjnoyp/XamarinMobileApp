@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfSong>
+  <Song>
+    <Title>Hello is this going to work</Title>
+    <Artist>Job Marley</Artist>
+  </Song>
+  <Song>
+    <Title>1234532432</Title>
+    <Artist>sdfawefwef</Artist>
+  </Song>
+</ArrayOfSong>
